@@ -1,0 +1,61 @@
+.wpcf7-form {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    height: 600px;
+    font-family: "Poppins";
+    text-transform: uppercase;
+  }
+  @media screen and (max-width: 425px) {
+    .wpcf7-form {
+      max-width: 100%;
+    }
+  }
+  .wpcf7-form label {
+    color: black;
+  }
+  .wpcf7-form .label-form {
+    border: none;
+    background-color: none;
+    color: black;
+  }
+  .wpcf7-form input, .wpcf7-form textarea {
+    border-radius: 10px;
+    border: 1px solid #B8BBC2;
+    margin-bottom: 20px;
+    height: 40px;
+    width: 260px;
+    font-family: "Space Mono"; 
+  }
+  @media screen and (max-width: 450px) {
+    .wpcf7-form input, .wpcf7-form textarea{
+      width: 150px;
+    }
+  }
+  .wpcf7-form .wpcf7-submit, .wpcf7-form .has-spinner {
+    border-radius: 2px;
+    border: none;
+    display: flex;
+    justify-content: center;
+  }
+  .wpcf7-form textarea {
+    height: 190px;
+  }
+  .wpcf7-form .form {
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .wpcf7-form .form ul {
+    padding: 0px;
+    margin: 0px;
+  }
+  .wpcf7-form .form ul li {
+    display: flex;
+  }
+  .wpcf7-form .form div p {
+    padding: 0px;
+    margin: 0px;
+  }

@@ -1,0 +1,303 @@
+/* CSS single-photo.php */
+#main_single_photo_page {
+    max-width: 1200px;
+    height: auto;
+    margin: auto;
+
+    /* Setting section description */
+    .section_post_photos {
+        max-width: 100%;
+        height: 88vh;
+        margin-top: 34px;
+        font-family: "Space Mono", monospace;
+        display: flex;
+        align-items: stretch;
+        gap: 20px;
+        @media screen and (max-width: 1024px) {
+            height: 600px;
+        }
+        @media screen and (max-width: 768px) {
+            flex-direction: column-reverse;
+            height: auto;
+            margin-top: 20px;
+        }
+        .post_photo_desc {
+            width: 50%;
+            border-bottom: 1px solid black;
+            position: relative;
+            @media screen and (max-width: 768px) {
+                width: 100%;
+                height: auto;
+            }
+            .post_photo_desc_content {
+                position: absolute;
+                bottom: 56px; 
+                @media screen and (max-width: 1024px) {
+                    left: 20px;
+                }
+                @media screen and (max-width: 768px) {
+                    position: relative;
+                    width: 90%;
+                    height: 320px;
+                    top: 30px;
+                    left: 0;
+                    margin: auto;
+                }
+                .post_photo_title {
+                    font-size: 66px;
+                    text-transform: uppercase;
+                    font-style: italic;
+                    color: #000;
+                    @media screen and (max-width: 1024px) {
+                        font-size: 56px;
+                    }
+                    @media screen and (max-width: 768px) {
+                        font-size: 46px;
+                        text-align: center;
+                    }
+                    @media screen and (max-width: 768px) {
+                        text-align: left;
+                    }
+                }
+                .post_photo_text {
+                    font-size: 14px;
+                    line-height: 21px;
+                    text-transform: uppercase;
+                    color: #000;
+                    margin-top: 15px;
+                    @media screen and (max-width: 768px) {
+                        margin-left: 20px;
+                    }
+                }
+                a {
+                    color: #000;
+                }
+            }
+        }
+        .post_photo_img {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            @media screen and (max-width: 768px) {
+                width: 100%;
+                height: 600px;
+            }
+            @media screen and (max-width: 425px) {
+                height: 500px;
+            }
+            @media screen and (max-width: 375px) {
+                height: 450px;
+            }
+            @media screen and (max-width: 320px) {
+                height: 400px;
+            }
+            .photo_block {
+                width: 100%;
+                height: 100%;
+                position: relative;
+                .text_category,
+                .text_reference,
+                .icon_eye {
+                    display: none;
+                }
+                .icon_fullscreen {
+                    position: absolute;
+                    width: 50px;
+                    height: 50px;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    opacity: 0;
+                }
+                .icon_fullscreen:hover {
+                    opacity: 1;
+                    transition: opacity 0.5s ease;
+                }
+                img {
+                    max-width: 100%;
+                    height: 100%; 
+                    object-fit: cover;
+                    object-position: 50% 50%;
+                    display: flex; 
+                    @media screen and (max-width: 768px) {
+                        height: 100%;
+                        width: 100%;
+                    }
+                } 
+            }
+        }
+    }
+
+    /* Setting Section Contact */
+    .section_post_contact_nav {
+        width: 100%;
+        height: 120px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        border-bottom: 1px solid black;
+        gap: 20px;
+        .post_contact_text {
+            width: 50%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            @media screen and (max-width: 768px) {
+                height: 100px;
+                flex-direction: column;
+                justify-content: space-evenly;
+                align-items: start;
+                width: 280px;
+            }
+            p {
+                font-size: 16px;
+                font-family: Poppins;
+                @media screen and (max-width: 1024px) {
+                    margin-left: 15px;
+                }
+                @media screen and (max-width: 768px) {
+                    margin-left: 0px;
+                }
+            }
+            .post_contact_link {
+                width: 270px;
+                height: 50px;
+                color: #000;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 2px;
+                background-color: #d8d8d8;
+                transition: all 300ms ease-in-out;
+                span {
+                    font-size: 16px;
+                    font-weight: 400;
+                }
+                @media screen and (max-width: 1024px) {
+                    width: 200px;
+                }
+                @media screen and (max-width: 768px) {
+                    width: 100%;
+                }
+            }
+            .post_contact_link:hover {
+                font-weight: 700;
+                color: #fff;
+                background-color: #000;
+                transition: all 300ms ease-in-out;
+            }
+        }
+        .post_photo_navigation {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-end;
+            @media screen and (max-width: 768px) {
+                display: none;
+            }
+            .post_links {
+                width: 81px;
+                display: flex;
+                justify-content: space-between;
+            }
+            .image-transition {
+                transition: all 0.5s ease-in-out;
+                width: 200px;
+            }
+        }
+    }
+
+    /* Setting Section Ohter Imgs */
+    .section_post_other_imgs {
+        width: 100%;
+        height: auto;
+        padding-bottom: 20px;
+        .post_other_text {
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            height: 100px;
+            @media screen and (max-width: 768px) {
+                justify-content: center;
+            }
+            h3 {
+                font-size: 18px;
+                text-transform: uppercase;
+                @media screen and (max-width: 1024px) {
+                    margin-left: 20px;
+                }
+            }
+        }
+        .post_other_imgs_container {
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            .photo_block {
+                width: 49%;
+                height: 550px;
+                position: relative;
+                margin: 0 auto;
+                @media screen and (max-width: 768px) {
+                    width: 90%;
+                    margin: auto;
+                }
+                @media screen and (max-width: 425px) {
+                    height: 400px;
+                }
+                @media screen and (max-width: 375px) {
+                    height: 340px;
+                }
+                @media screen and (max-width: 375px) {
+                    height: 300px;
+                }
+                img {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: 50% 50%;
+                }
+            }
+        }
+    }
+
+    .section_btn_load_all_imgs {
+        width: 100%;
+        height: auto;
+        .btn_load_all_imgs {
+            width: 270px;
+            height: 50px;
+            margin: 30px auto 50px;
+            @media screen and (max-width: 1024px) {
+                width: 250px;
+            }
+        }
+        span {
+            width: 100%;
+            height: 100%;
+            color: #000;
+            background-color: #d8d8d8;
+            border-radius: 2px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 300ms ease-in-out;
+            @media screen and (max-width: 768px) {
+                width: 100%;
+            }
+        }
+        span:hover {
+            font-weight: 700;
+            color: #fff;
+            background-color: #000;
+            transition: all 300ms ease-in-out;
+        }
+    }
+}

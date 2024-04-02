@@ -1,0 +1,186 @@
+@charset "UTF-8";
+.lightbox_overlay {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  display: none; /* initialement caché */
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+.lightbox_overlay .lightbox_wrapper {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.lightbox_overlay .lightbox_wrapper .before_arrow,
+.lightbox_overlay .lightbox_wrapper .after_arrow {
+  position: absolute;
+  height: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+@media screen and (max-width: 1150px) {
+  .lightbox_overlay .lightbox_wrapper .before_arrow,
+  .lightbox_overlay .lightbox_wrapper .after_arrow {
+    display: none;
+  }
+}
+.lightbox_overlay .lightbox_wrapper .before_arrow {
+  width: 200px;
+  left: 10%;
+}
+@media screen and (max-width: 1400px) {
+  .lightbox_overlay .lightbox_wrapper .before_arrow {
+    left: 5%;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .lightbox_overlay .lightbox_wrapper .before_arrow {
+    left: 2%;
+  }
+}
+.lightbox_overlay .lightbox_wrapper .after_arrow {
+  width: 200px;
+  right: 10%;
+}
+@media screen and (max-width: 1400px) {
+  .lightbox_overlay .lightbox_wrapper .after_arrow {
+    right: 5%;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .lightbox_overlay .lightbox_wrapper .after_arrow {
+    right: 2%;
+  }
+}
+.lightbox_overlay .lightbox_wrapper .after_chevron,
+.lightbox_overlay .lightbox_wrapper .before_chevron {
+  position: absolute;
+  font-size: 60px;
+  color: #fff;
+  font-weight: 100;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  display: none;
+}
+@media screen and (max-width: 1150px) {
+  .lightbox_overlay .lightbox_wrapper .after_chevron,
+  .lightbox_overlay .lightbox_wrapper .before_chevron {
+    display: block;
+  }
+}
+@media screen and (max-width: 425px) {
+  .lightbox_overlay .lightbox_wrapper .after_chevron,
+  .lightbox_overlay .lightbox_wrapper .before_chevron {
+    font-size: 40px;
+  }
+}
+.lightbox_overlay .lightbox_wrapper .before_chevron {
+  left: 2%;
+}
+@media screen and (max-width: 425px) {
+  .lightbox_overlay .lightbox_wrapper .before_chevron {
+    left: 1%;
+  }
+}
+.lightbox_overlay .lightbox_wrapper .after_chevron {
+  right: 2%;
+}
+@media screen and (max-width: 425px) {
+  .lightbox_overlay .lightbox_wrapper .after_chevron {
+    right: 1%;
+  }
+}
+.lightbox_overlay .lightbox_wrapper .close_lightbox {
+  position: absolute;
+  top: 3%;
+  right: 22%;
+  cursor: pointer;
+}
+@media screen and (max-width: 1024px) {
+  .lightbox_overlay .lightbox_wrapper .close_lightbox {
+    top: 5%;
+    right: 5%;
+  }
+}
+@media screen and (max-width: 425px) {
+  .lightbox_overlay .lightbox_wrapper .close_lightbox {
+    top: 10%;
+  }
+}
+.lightbox_overlay .lightbox_wrapper .lightbox_img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgb(231, 231, 231);
+  width: auto;
+  height: 800px;
+}
+@media screen and (max-width: 1024px) {
+  .lightbox_overlay .lightbox_wrapper .lightbox_img {
+    width: 80%;
+    height: 750px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .lightbox_overlay .lightbox_wrapper .lightbox_img {
+    height: 550px;
+  }
+}
+.lightbox_overlay .lightbox_wrapper .lightbox_img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 50% 50%;
+     object-position: 50% 50%;
+}
+.lightbox_overlay .lightbox_text {
+  font-size: 24px;
+  color: #ffffff;
+  text-transform: uppercase;
+  position: absolute;
+}
+@media screen and (max-width: 425px) {
+  .lightbox_overlay .lightbox_text {
+    font-size: 18px;
+  }
+}
+.lightbox_overlay .lightbox_title {
+  width: 100%;
+  top: -4%;
+  display: flex;
+  justify-content: center;
+}
+.lightbox_overlay .lightbox_reference {
+  left: 0%;
+  bottom: -4%;
+}
+.lightbox_overlay .lightbox_categoriies {
+  right: 0%;
+  bottom: -4%;
+}
+.lightbox_overlay.active-lightbox {
+  opacity: 1; /* Ajoutez cette ligne */
+}
+.lightbox_overlay.show-lightbox {
+  display: flex;
+}
+
+/* Class to display none Lightbox elements Hero Img Single Page  */
+.is_display_none {
+  display: none;
+  opacity: 0;
+}

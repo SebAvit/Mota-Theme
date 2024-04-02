@@ -1,0 +1,286 @@
+.hero_section {
+    width: 100%;
+    height: 90vh;
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-size: 145%;
+    position: relative;
+    @media screen and (max-width: 1024px) {
+        height: 70vh;
+    }
+    @media screen and (max-width: 768px) {
+        height: 30vh;
+    }
+    @media screen and (max-width: 425px) {
+        height: 29vh;
+    }
+    @media screen and (max-width: 375px) {
+        height: 26vh;
+    }
+    @media screen and (max-width: 320px) {
+        height: 22vh;
+    }
+    //
+    .hero_img {
+        width: 100%;
+        height: 100%;
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: 50% 50%;
+        }
+    }
+    //
+    h1 svg {
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
+    }
+}
+// Setting Filter Section
+#section_selects {
+    max-width: 1300px;
+    min-height: auto;
+    margin: 0 auto;
+    padding: 60px 0 30px 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    @media screen and (max-width: 1024px) {
+        flex-direction: column !important;
+        width: 100%;
+    }
+    @media screen and (max-width: 425px) {
+        padding: 40px 0 40px 0;
+    }
+
+    .wrapper_select_boxes {
+        position: relative;
+        width: 33%;
+        height: 52px;
+        margin: 0 auto;
+        @media screen and (max-width: 425px) {
+            width: 80%;
+        }
+        .title_filter_box {
+            width: 100%;
+            height: 100%;
+            margin-bottom: 15px;
+            padding: 0 20px;
+            border: 1px solid #b8bbc2;
+            border-radius: 8px;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            .span_title_filter {
+                font-size: 14px;
+                font-weight: 500;
+                font-family: "Poppins";
+                text-transform: uppercase;
+                color: black;
+            }
+            .span_icon_filter {
+                width: 30px;
+                height: 30px;
+                font-size: 24px;
+                line-height: 15px;
+                display: flex;
+                justify-content: center;
+                transition: all 300ms ease-in;
+                color: black;
+            }
+            .span_icon_filter_rotate {
+                transform: rotate(180deg);
+                transition: all 300ms ease-in;
+            }
+        }
+        .title_filter_box:hover {
+            border: 1px solid #215aff;
+            transition: all 300ms ease-in;
+        }
+        .title_filter_box_clicked {
+            border: 1.3px solid #215aff;
+            border-radius: 8px 8px 0 0;
+        }
+        .list_items_filter {
+            width: 100%;
+            background-color: #fff;
+            border-radius: 0 0 8px 8px;
+            position: absolute;
+            display: none;
+            animation: fadeIn_close_list_items 0.3s ease-in-out;
+            z-index: 1;
+            .list_item {
+                font-size: 14px;
+                font-weight: 500;
+                font-family: "Poppins";
+                color: #313144;
+                padding: 24px 0 24px 20px;
+            }
+            .list_item:last-child {
+                border-radius: 0 0 8px 8px;
+            }
+        }
+        .list_item_hover { 
+            background: #ffd6d6;
+            cursor: pointer;
+        }
+        .list_item_pressing {
+            background: #fe5858;
+        }
+        .list_item_selected {
+            background-color: #e00000;
+            color: #fff !important;
+        }
+        .menu_open {
+            display: block;
+            animation: fadeIn_open_list_items 0.3s ease-in-out;
+        }
+    }
+    .wrapper_select_boxes:nth-child(2) {
+        margin-right: 25.8%;
+        @media screen and (max-width: 1024px) {
+            margin-right: auto;
+        }
+        @media screen and (max-width: 768px) {
+            margin-right: auto;
+        }
+    }
+}
+// Display Nothing Result
+.nothing_result {
+    width: 50%;
+    height: 550px;
+    margin: auto;
+    display: flex;
+    background: linear-gradient(
+            rgba(255, 255, 255, 0.7),
+            rgba(255, 255, 255, 0.7)
+        ),
+        url("http://photographe-event.local/wp-content/themes/photographe-event/assets/img/not-found.webp");
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @media screen and (max-width: 768px) {
+        width: 90%;
+        background-position: 50% 50%;
+    }
+    @media screen and (max-width: 425px) {
+        height: 400px;
+    }
+    p {
+        font-size: 24px;
+        margin: 20px auto;
+        @media screen and (max-width: 425px) {
+            font-size: 18px;
+        }
+        @media screen and (max-width: 375px) {
+            font-size: 16px;
+        }
+        span {
+            color: #e00000;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+    }
+}
+// Setting Section Photos + Overlay Loop
+.section_photo_block_container {
+    max-width: 1300px;
+    height: auto;
+    margin: 0 auto;
+    padding-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    @media screen and (max-width: 1024px) {
+        width: 100%;
+    }
+    .photo_block {
+        width: 49%;
+        height: 550px;
+        position: relative;
+        margin: 0 auto;
+        @media screen and (max-width: 768px) {
+            width: 90%;
+            margin: auto;
+        }
+        @media screen and (max-width: 425px) {
+            height: 400px;
+        }
+        @media screen and (max-width: 375px) {
+            height: 340px;
+        }
+        @media screen and (max-width: 375px) { 
+            height: 300px;
+        }
+        img {
+            display: block;
+            max-width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: 50% 50%; 
+        }
+    } 
+}
+// Setting Btn All Photos
+.div_btn_load_more {
+    width: 100%;
+    height: auto;
+    .btn_load_more {
+        width: 270px;
+        height: 50px;
+        margin: 20px auto 50px;
+        @media screen and (max-width: 1024px) {
+            width: 250px;
+        }
+        button {
+            width: 100%;
+            height: 100%;
+            font-family: 'Space Mono';
+            color: #000;
+            background-color: #d8d8d8;
+            border-radius: 2px;
+            cursor: pointer;
+            border: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 300ms ease-in-out;
+            @media screen and (max-width: 768px) {
+                width: 100%;
+            }
+        }
+        button:hover {
+            font-weight: 700;
+            color: #fff;
+            background-color: #000;
+            transition: all 300ms ease-in-out;
+        }
+    }
+}
+/* Animation list items filter */
+@keyframes fadeIn_open_list_items {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes fadeIn_close_list_items {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
