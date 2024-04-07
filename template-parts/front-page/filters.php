@@ -1,6 +1,6 @@
 <form method="post" id="section_selects">    
             <select name="categorie" class="wrapper_select_boxes" id="categorie">
-                <option class="title_filter_box"value=""></option>
+                <option class="title_filter_box"value="">Catégories</option>
                 <?php 
                     $terms = get_terms( array(
                         'taxonomy'   => 'categoriies',
@@ -13,7 +13,7 @@
             </select>
 
             <select name="format"  id="format" class="wrapper_select_boxes">
-                <option value=""></option>
+                <option value="">Formats</option>
                 <?php 
                     $terms = get_terms( array(
                         'taxonomy'   => 'formats',

@@ -64,43 +64,52 @@
             </section><!-- .section_post_contact -->
 
             <!-- Contact section display -->
-            <section class="section_post_other_imgs">
-                <div class="post_other_text">
-                    <h3>Vous aimerez aussi</h3>
-                </div>
-                <article class="post_other_imgs_container">
-                <?php
-            $categorie = get_the_terms(get_the_ID(), 'categoriies');
-            // Post per page
-            $post_per_page = 2;
-            // Argument definition
-            $args = array(
-                'orderby' => 'rand',
-                'post_type' => 'photos',
-                'posts_per_page' => $post_per_page,
-                'paged' => 1,
-                'tax_query' => array(
-                    array(
-                        'taxonomy' => 'categoriies',
-                        'field' => 'slug',
-                        'terms' =>  (!empty($categorie)) ? $categorie[0]->slug : '',
+            <?php
+                $current_post_id = get_the_ID();
+                $categorie = get_the_terms(get_the_ID(), 'categoriies');
+                // Post per page
+                $post_per_page = 2;
+                // Argument definition
+                $args = array(
+                    'orderby' => 'rand',
+                    'post_type' => 'photos',
+                    'posts_per_page' => $post_per_page,
+                    'paged' => 1,
+                    'post__not_in' => array($current_post_id), 
+                    'tax_query' => array(
+                        array(
+                            'taxonomy' => 'categoriies',
+                            'field' => 'slug',
+                            'terms' =>  (!empty($categorie)) ? $categorie[0]->slug : '',
+                        ),
                     ),
-                ),
-            );
-            // Definition / Execution of wp-query
-            $query = new WP_Query($args);
-            // Execution loop of wp-query
-            while ($query->have_posts()) : $query->the_post();
-                $post_url = get_permalink();
-            ?>
-                        <!-- Template Post Card -->
-                        <?php get_template_part('template-parts/photo_block'); ?>
-                    <?php endwhile;
-                    wp_reset_postdata() ?>
-                </article>
-            </section><!-- .section_post_other_imgs -->
-        </main><!-- #main_single_photo_page -->
-<?php endwhile;
-endif; ?>
+                );
+                // Definition / Execution of wp-query
+                $query = new WP_Query($args);
+                // Execution loop of wp-query
+                if ($query->have_posts()) :
+                ?>
+                <section class="section_post_other_imgs">
+                    <div class="post_other_text">
+                        <h3>Vous aimerez aussi</h3>
+                    </div>
+                    <article class="post_other_imgs_container">
+                    <?php
+                        while ($query->have_posts()) : $query->the_post();
+                            $post_url = get_permalink();
+                            // Template Post Card
+                            get_template_part('template-parts/photo_block');
+                        endwhile;
+                        wp_reset_postdata();
+                    ?>
+                    </article>
+                </section>
+                <?php
+                endif;
+                ?>
+
+            </main><!-- #main_single_photo_page -->
+    <?php endwhile;
+    endif; ?>
 
 <?php get_footer(); ?>
